@@ -1,4 +1,13 @@
-"""Basic usage example WITHOUT RLM — passes entire document in the prompt."""
+"""Basic usage example WITHOUT RLM, passes entire document in the prompt.
+
+Serves as a baseline comparison for the RLM approach. The full document
+is embedded directly in the LLM prompt, so the model must attend to the
+entire context at once. Compare token usage and accuracy against
+basic_usage.py to see the benefits of RLM.
+
+Usage:
+    uv run basic_usage_no_rlm.py
+"""
 
 import asyncio
 import os

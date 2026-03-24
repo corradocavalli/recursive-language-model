@@ -118,7 +118,7 @@ The `basic_usage.py` script demonstrates RLM processing a complex, multi-part an
 against the `ai_history.txt` document:
 
 ```bash
-python basic_usage.py
+uv run basic_usage.py
 ```
 
 The script loads the document, creates an RLM instance, and lets the agent explore the text
@@ -131,7 +131,7 @@ The `basic_usage_no_rlm.py` script sends the same query with the full document e
 in the prompt, providing a baseline for comparison:
 
 ```bash
-python basic_usage_no_rlm.py
+uv run basic_usage_no_rlm.py
 ```
 
 ### Verifying results
@@ -140,7 +140,7 @@ The `verify.py` script computes ground truth answers for the sample queries usin
 Python code:
 
 ```bash
-python verify.py
+uv run verify.py
 ```
 
 ## Library API

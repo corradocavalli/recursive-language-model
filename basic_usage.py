@@ -1,4 +1,13 @@
-"""Basic usage example for RLM (MAF port)."""
+"""Basic usage example for RLM (MAF port).
+
+Demonstrates how to use the Recursive Language Model to answer complex
+analytical queries against a long document. The document is stored as a
+variable and explored programmatically via a sandboxed Python REPL,
+rather than being passed directly in the prompt.
+
+Usage:
+    uv run basic_usage.py
+"""
 
 import asyncio
 import os
