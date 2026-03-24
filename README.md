@@ -64,6 +64,7 @@ rlm/
 ├── basic_usage.py             # Example: query a document using RLM
 ├── basic_usage_no_rlm.py      # Example: same query without RLM (full context in prompt)
 ├── verify.py                  # Ground truth verification script for ai_history.txt
+├── .env.example               # Template for required environment variables
 ├── pyproject.toml             # Project metadata and dependencies
 └── README.md
 ```
@@ -71,6 +72,7 @@ rlm/
 ## Prerequisites
 
 * Python 3.13 or later
+* [uv](https://docs.astral.sh/uv/) package manager
 * An Azure OpenAI deployment with the Responses API enabled
 * Azure CLI authenticated (`az login`)
 
@@ -83,27 +85,26 @@ rlm/
    cd rlm
    ```
 
-2. Create and activate a virtual environment:
+2. Create a virtual environment and install dependencies:
 
    ```bash
-   python -m venv .venv
-   source .venv/bin/activate
+   uv sync
    ```
 
-3. Install dependencies:
+3. Copy the example environment file and fill in your Azure OpenAI credentials:
 
    ```bash
-   pip install -e .
+   cp .env.example .env
    ```
 
-4. Create a `.env` file in the project root with your Azure OpenAI credentials:
+   Then edit `.env` with your values:
 
    ```text
-   AZURE_AI_PROJECT_ENDPOINT=https://<your-endpoint>.openai.azure.com/
+   AZURE_AI_PROJECT_ENDPOINT=https://<your-resource>.services.ai.azure.com/api/projects/<your-project>
    AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME=<your-deployment-name>
    ```
 
-5. Ensure you are logged into Azure CLI:
+4. Ensure you are logged into Azure CLI:
 
    ```bash
    az login
